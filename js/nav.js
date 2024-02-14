@@ -9,8 +9,8 @@
 async function navAllStories(evt) {
   console.debug("navAllStories", evt);
   hidePageComponents();
-  await getFaveStoriesOnStart();
-  await getMyStoriesOnStart();
+  if (currentUser) await getFaveStoriesOnStart();
+  if (currentUser) await getMyStoriesOnStart();
   hidePageComponents();
   getAndShowStoriesOnStart();
   $allStoriesList.show();
